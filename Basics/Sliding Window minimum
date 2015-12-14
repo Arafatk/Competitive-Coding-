@@ -1,0 +1,9 @@
+Suppose that we are now at index i and considering to add ai. 
+Notice that when ai is added, all elements in (j, aj) in D such that 
+aj is bigger than ai can never be a minimum value as we go forward, hence 
+they can be removed from D. Furthermore, if the element (i-L-1, ai−L−1) is 
+in D (which will be located at the top of D if it exists), we remove that 
+element as well. Lastly, we append ai at the back of D. Then we will have 
+Q(i-L, i) = the top element in D when we reach index i. Since each element
+will enter and leave D only once, 
+we have a total of O(N) operations. :D
