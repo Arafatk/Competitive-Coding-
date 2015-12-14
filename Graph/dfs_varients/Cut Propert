@@ -1,0 +1,10 @@
+A cut vertex is a vertex that when removed (with its boundary edges) from a
+graph creates more connected components than previously in the graph.
+A cut edge is an edge that when removed (the vertices stay in place) from a graph 
+creates more connected components than previously in the graph.
+A single vertex is also considered connected to itself and when removing cut edges
+you make sure you are not cutting out cycles
+
+
+Learn from
+http://math.stackexchange.com/questions/457159/cut-vertices-and-cut-edges-did-i-answer-these-correctly

@@ -1,0 +1,50 @@
+Chinese remainder theorem states that if their are a set of paiwise
+coprime numbers and we have an a set of of numbers
+(a1,a2,a3...an) then we can get the solution of 
+x=a1(mod)m1
+x=a2(mod)m2
+x=a3(mod)m3
+..
+..
+x=an(mod)mn
+The method to get the solution is that the value of 
+x= (mod2*mod3*..modn) + (mod1*mod3*mod4...modn)+... )+(mod1*mod2*...mod(n-1))...
+inititially
+then to satisfy all the queries for any mode the term 
+which does not contain all the mod terms we can can satisfy the equation
+via the method of inverse modulo and all the other terms can be neglected
+
+The proof is also evident provided the Inverse modulo exists (Which only exists in coprimity)
+which it does coz the things involved are coprime as mod i and mod rest are coprime 
+
+
+The above results can then be used to Clasify an extreemly large number and a sum of 
+product of prime terms 
+eg 
+a = x1 + x2 *p1  + x3 * p1 * p2 + x4 * p1 *p2 *p3 + ....  ... 
+
+a1= x1          mod (p1)
+a2= x1+ x2 *p1  mod (p2) 
+(a2-x1)*r12= x2 mod (p2) 
+x2=(a2-x1)*r12  mod (p2) 
+
+With Similar induction we get
+The image of Garner inside the folder 
+which helps us make our induction
+
+Finally the The original Huge Number in  O(k^2) so that could be used to 
+do our jobs 
+
+This is the code 
+for (int i=0; i<k; ++i) {
+ x[i] = a[i];
+	for (int j=0; j<i; ++j) {
+ x[i] = r[j][i] * (x[i] - x[j]);
+
+ x[i] = x[i] % p[i];
+		if (x[i] < 0) x[i] += p[i];
+	}
+}
+
+Explaination
+http://e-maxx.ru/algo/chinese_theorem
